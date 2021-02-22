@@ -2,7 +2,8 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
-    render json: @articles
+    serialized_data = ArticleSerializer.new(@articles).serialized_json
+    render json: serialized_data
   end
 
   def show
