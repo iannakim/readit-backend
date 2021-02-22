@@ -1,4 +1,3 @@
 class Task < ApplicationRecord
-  has_one :article
-  
+  belongs_to :article
 end

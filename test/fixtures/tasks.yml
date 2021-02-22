@@ -3,7 +3,9 @@
 one:
   skill: MyString
   prompt: MyString
+  article: one
 
 two:
   skill: MyString
   prompt: MyString
+  article: two

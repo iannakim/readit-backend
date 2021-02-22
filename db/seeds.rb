@@ -1,3 +1,4 @@
+# Activity.delete_all
 
 
 Activity.new(skill:"Defining New Words" , prompt: "Select five (5) new words from the article. Write each word's definition and use it in a complete sentence.")

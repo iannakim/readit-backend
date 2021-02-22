@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_22_014734) do
+ActiveRecord::Schema.define(version: 2021_02_22_154050) do
 
   create_table "activities", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -38,8 +38,10 @@ ActiveRecord::Schema.define(version: 2021_02_22_014734) do
   create_table "tasks", force: :cascade do |t|
     t.string "skill"
     t.string "prompt"
+    t.integer "article_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["article_id"], name: "index_tasks_on_article_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -53,4 +55,5 @@ ActiveRecord::Schema.define(version: 2021_02_22_014734) do
 
   add_foreign_key "activities", "articles"
   add_foreign_key "activities", "users"
+  add_foreign_key "tasks", "articles"
 end
